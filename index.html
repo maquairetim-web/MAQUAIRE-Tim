@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAQUAIRE Tim — Wiki Officiel</title>
+  <meta name="description" content="Wiki officiel de MAQUAIRE Tim, personnalité internet française. Passionné de jeux vidéo RPG, musicien rap/trap et créateur de contenu.">
+  <meta name="keywords" content="MAQUAIRE Tim, Maquaire Tim, maquaire tim, personnalité internet, gamer français, rap trap, Yo-kai Watch, Persona, gaming">
+  <meta name="author" content="MAQUAIRE Tim">
+  <meta property="og:title" content="MAQUAIRE Tim — Wiki Officiel">
+  <meta property="og:description" content="Wiki officiel de MAQUAIRE Tim, personnalité internet française. Passionné de jeux vidéo RPG, musicien rap/trap et créateur de contenu.">
+  <meta property="og:image" content="https://cdn.discordapp.com/attachments/1141374964281397320/1512800374602338354/Capture_decran_2026-02-27_163310.png?ex=6a2568a3&is=6a241723&hm=b29058f64caac1591af01347fe1a83ccf17bc0503494bf73fecffd0b25b8033d&">
+  <meta property="og:type" content="profile">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c8a96e;
+      --gold-dim: #2a2415;
+      --gold-border: #3a3018;
+      --bg: #0d0d0d;
+      --bg2: #111111;
+      --bg3: #141414;
+      --bg4: #1a1a1a;
+      --border: #1e1e1e;
+      --border2: #2a2a2a;
+      --text: #e8e8e0;
+      --text2: #aaaaaa;
+      --text3: #666666;
+      --text4: #555555;
+      --text5: #888888;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 40px;
+      background: var(--bg4);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 28px; }
+    nav a {
+      font-size: 13px;
+      color: var(--text5);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      border-bottom: 1px solid var(--border);
+      min-height: 380px;
+    }
+    .portrait {
+      overflow: hidden;
+      position: relative;
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+      min-height: 380px;
+    }
+    .hero-text {
+      padding: 48px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      line-height: 1;
+      color: #f0ede6;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text3);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .badge {
+      font-size: 11px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+    .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
+    .badge-gray { background: #1e1e1e; color: #999; border: 1px solid #333; }
+    .stats { display: flex; gap: 36px; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: 11px; color: var(--text4); letter-spacing: 0.5px; }
+
+    /* BODY LAYOUT */
+    .body-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      max-width: 100%;
+    }
+    .main { padding: 48px 56px; border-right: 1px solid var(--border); }
+    .sidebar { padding: 36px 32px; }
+
+    /* SECTIONS */
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+    }
+    .wiki-text {
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text2);
+      margin-bottom: 28px;
+    }
+    .wiki-text strong { color: #d0cdc5; font-weight: 500; }
+
+    blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 18px 22px;
+      background: var(--bg2);
+      border-radius: 0 8px 8px 0;
+      margin: 28px 0;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* TIMELINE */
+    .timeline { margin-bottom: 36px; }
+    .tl-item { display: flex; gap: 18px; margin-bottom: 18px; position: relative; }
+    .tl-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .tl-year { font-size: 11px; color: var(--gold); letter-spacing: 1px; font-weight: 500; margin-bottom: 3px; }
+    .tl-desc { font-size: 13px; color: var(--text5); line-height: 1.6; }
+
+    /* INTERESTS */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .interest-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .interest-name {
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .interest-desc { font-size: 12px; color: var(--text4); line-height: 1.6; }
+
+    /* SIDEBAR CARDS */
+    .s-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .s-card-title {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--text4);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid #181818;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-key { font-size: 12px; color: var(--text4); }
+    .info-val { font-size: 12px; color: #ccc; text-align: right; max-width: 58%; }
+    .info-val.gold { color: var(--gold); }
+
+    /* JEUX FAVORIS */
+    #games-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+    .game-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .game-rank {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: var(--gold);
+      min-width: 22px;
+    }
+    .game-name { font-size: 13px; color: #ddd; flex: 1; }
+    .game-tag {
+      font-size: 11px;
+      color: var(--text4);
+      background: #1a1a1a;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .game-del {
+      background: none;
+      border: none;
+      color: #3a3a3a;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 0 2px;
+      transition: color 0.15s;
+    }
+    .game-del:hover { color: var(--gold); }
+    .add-row { display: flex; gap: 8px; margin-top: 4px; }
+    .add-input {
+      flex: 1;
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #ddd;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .add-input:focus { border-color: var(--gold); }
+    .add-input::placeholder { color: #444; }
+    .add-btn {
+      background: var(--gold);
+      border: none;
+      color: #0d0d0d;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1;
+      transition: opacity 0.15s;
+    }
+    .add-btn:hover { opacity: 0.85; }
+    .edit-hint {
+      font-size: 11px;
+      color: var(--text4);
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #0f0f0f;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    /* PLATFORMS */
+    .platform-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: #0f0f0f;
+      border: 1px solid #1a1a1a;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .platform-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .platform-name { font-size: 13px; color: var(--text2); flex: 1; }
+    .platform-tag { font-size: 11px; color: var(--text4); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text4);
+      margin-top: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .portrait img { min-height: 260px; height: 260px; }
+      .hero-text { padding: 28px 24px; }
+      .hero-title { font-size: 52px; }
+      .body-layout { grid-template-columns: 1fr; }
+      .main { padding: 28px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+      .sidebar { padding: 28px 24px; }
+      .topbar { padding: 12px 20px; }
+      nav { gap: 16px; }
+      .interests-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="#">WIKINET</a>
+    <nav>
+      <a href="#bio">Biographie</a>
+      <a href="#timeline">Chronologie</a>
+      <a href="#univers">Univers</a>
+      <a href="#jeux">Jeux favoris</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="portrait">
+      <img
+        src="https://cdn.discordapp.com/attachments/1141374964281397320/1512800374602338354/Capture_decran_2026-02-27_163310.png?ex=6a2568a3&is=6a241723&hm=b29058f64caac1591af01347fe1a83ccf17bc0503494bf73fecffd0b25b8033d&"
+        alt="Photo de MAQUAIRE Tim"
+        onerror="this.parentElement.style.background='#1a1a1a'"
+      >
+    </div>
+    <div class="hero-text">
+      <div class="hero-tag">Personnalité Internet · France</div>
+      <h1 class="hero-title">MAQUAIRE<br>TIM</h1>
+      <p class="hero-sub">Créateur de contenu, musicien et gamer français.<br>Connu pour son univers authentique et sa passion du jeu vidéo.</p>
+      <div class="badges">
+        <span class="badge badge-gold">Gaming</span>
+        <span class="badge badge-gold">Musique Rap/Trap</span>
+        <span class="badge badge-gray">Art Numérique</span>
+        <span class="badge badge-gray">Créateur de contenu</span>
+      </div>
+      <div class="stats">
+        <div><span class="stat-num">2026</span><span class="stat-label">Actif depuis</span></div>
+        <div><span class="stat-num">4+</span><span class="stat-label">Franchises</span></div>
+        <div><span class="stat-num">FR</span><span class="stat-label">Nationalité</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="body-layout">
+    <main class="main">
+
+      <section id="bio">
+        <h2 class="section-title">Biographie</h2>
+        <p class="wiki-text">
+          <strong>MAQUAIRE Tim</strong> est une personnalité d'internet française, passionné de jeux vidéo, de musique trap et d'art numérique. Il se distingue par son style authentique, ancré dans la culture de rue et les références jeunes. Actif sur plusieurs plateformes, il partage son univers créatif à travers ses projets musicaux, son contenu gaming et ses créations visuelles.
+        </p>
+        <p class="wiki-text">
+          Tim est notamment reconnu pour son amour profond des <strong>RPG au tour par tour</strong> et des franchises iconiques comme <strong>Yo-kai Watch</strong>, <strong>Persona</strong> et <strong>Pokémon</strong>. Il est également un fervent découvreur de nouveautés, comme en témoigne son coup de cœur pour <strong>Clair Obscur</strong>, titre qui a renouvelé sa vision du genre.
+        </p>
+        <blockquote>"Le jeu vidéo c'est pas juste un passe-temps — c'est une façon de voir le monde autrement."</blockquote>
+      </section>
+
+      <section id="timeline">
+        <h2 class="section-title">Chronologie</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-year">DÉBUT</div>
+              <div class="tl-desc">Premiers pas dans la création de contenu en ligne, gaming et musique rap/trap en français.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-year">MUSIQUE</div>
+              <div class="tl-desc">Lancement d'un projet musical trap/rap avec un style de rue authentique, références à 67, Tasty Croustie, Doro Party.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-year">GAMING</div>
+              <div class="tl-desc">Plongée dans Persona 3 Reload et plan de 100% sur Hello Neighbor, FF7 Remake et Battlefield 6.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div>
+              <div class="tl-year">2026</div>
+              <div class="tl-desc">Création du wiki officiel. Poursuite des projets créatifs et gaming.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="univers">
+        <h2 class="section-title">Univers &amp; Intérêts</h2>
+        <div class="interests-grid">
+          <div class="interest-card">
+            <div class="interest-name">🎮 RPG Tour par Tour</div>
+            <div class="interest-desc">Yo-kai Watch, Persona, Clair Obscur — sa passion première.</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-name">🎤 Musique Rap / Trap</div>
+            <div class="interest-desc">Production et écriture de textes en français, style rue authentique.</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-name">🎨 Art Numérique</div>
+            <div class="interest-desc">Création visuelle, retouche photo, animation 3D avec Spline et Blender.</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-name">📹 Créateur de contenu</div>
+            <div class="interest-desc">Partage son univers gaming et créatif sur différentes plateformes.</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar">
+
+      <div class="s-card">
+        <div class="s-card-title">Infos générales</div>
+        <div class="info-row"><span class="info-key">Nom</span><span class="info-val">MAQUAIRE Tim</span></div>
+        <div class="info-row"><span class="info-key">Nationalité</span><span class="info-val">Française</span></div>
+        <div class="info-row"><span class="info-key">Région</span><span class="info-val">Centre-Val de Loire</span></div>
+        <div class="info-row"><span class="info-key">Langues</span><span class="info-val">Français</span></div>
+        <div class="info-row"><span class="info-key">Activités</span><span class="info-val">Gaming, Musique, Art</span></div>
+      </div>
+
+      <div class="s-card" id="jeux">
+        <div class="s-card-title">Jeux favoris</div>
+        <div id="games-list"></div>
+        <div class="add-row">
+          <input class="add-input" id="game-input" type="text" placeholder="Ajouter un jeu...">
+          <button class="add-btn" id="add-btn" aria-label="Ajouter">+</button>
+        </div>
+        <div class="edit-hint">Clique sur × pour supprimer un jeu</div>
+      </div>
+
+      <div class="s-card">
+        <div class="s-card-title">Franchises favorites</div>
+        <div class="info-row"><span class="info-key">Yo-kai Watch</span><span class="info-val gold">★ Favori</span></div>
+        <div class="info-row"><span class="info-key">Persona</span><span class="info-val gold">★ Favori</span></div>
+        <div class="info-row"><span class="info-key">Pokémon</span><span class="info-val">Classique</span></div>
+        <div class="info-row"><span class="info-key">Clair Obscur</span><span class="info-val">Découverte récente</span></div>
+      </div>
+
+      <div class="s-card">
+        <div class="s-card-title">Plateformes</div>
+        <div class="platform-row">
+          <div class="platform-dot" style="background:#5865f2"></div>
+          <span class="platform-name">Discord</span>
+          <span class="platform-tag">Actif</span>
+        </div>
+        <div class="platform-row">
+          <div class="platform-dot" style="background:#1b9e77"></div>
+          <span class="platform-name">Steam</span>
+          <span class="platform-tag">Bibliothèque active</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer>
+    <p>Wiki MAQUAIRE Tim — Page en construction · Dernière mise à jour : juin 2026</p>
+  </footer>
+
+  <script>
+    const defaultGames = [
+      { name: "Yo-kai Watch 2 Spectre Psychique", tag: "Favori" },
+      { name: "Persona 3 Reload", tag: "En cours" },
+      { name: "Clair Obscur", tag: "Coup de cœur" },
+      { name: "Pokémon", tag: "Classique" },
+    ];
+
+    let games = [...defaultGames];
+
+    function render() {
+      const list = document.getElementById('games-list');
+      list.innerHTML = '';
+      games.forEach((g, i) => {
+        const row = document.createElement('div');
+        row.className = 'game-item';
+        row.innerHTML = `
+          <span class="game-rank">${i + 1}</span>
+          <span class="game-name">${g.name}</span>
+          <span class="game-tag">${g.tag}</span>
+          <button class="game-del" onclick="removeGame(${i})" aria-label="Supprimer">×</button>
+        `;
+        list.appendChild(row);
+      });
+    }
+
+    function removeGame(i) {
+      games.splice(i, 1);
+      render();
+    }
+
+    document.getElementById('add-btn').addEventListener('click', () => {
+      const input = document.getElementById('game-input');
+      const val = input.value.trim();
+      if (!val) return;
+      games.push({ name: val, tag: "Ajouté" });
+      input.value = '';
+      render();
+    });
+
+    document.getElementById('game-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') document.getElementById('add-btn').click();
+    });
+
+    render();
+  </script>
+
+</body>
+</html>
